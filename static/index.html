@@ -116,15 +116,6 @@ header p  { font-size:0.8rem; color:#64748b; font-family:'Space Mono',monospace;
 .card-head p  { font-size:0.72rem; color:#64748b; font-family:'Space Mono',monospace; margin-top:2px; }
 .card-body { padding:22px; }
 
-.sec-tag {
-  margin-left:auto;
-  font-size:0.65rem; font-family:'Space Mono',monospace;
-  padding:3px 10px; border-radius:12px;
-  background:rgba(0,229,160,0.1);
-  border:1px solid rgba(0,229,160,0.25);
-  color:#00e5a0;
-}
-
 /* ── FORM ── */
 .field { margin-bottom:16px; }
 .field label {
@@ -178,24 +169,6 @@ header p  { font-size:0.8rem; color:#64748b; font-family:'Space Mono',monospace;
 .flash.clean    { background:rgba(96,165,250,0.07); border-color:#60a5fa; color:#60a5fa; }
 
 /* ── SECURITY LAYERS VISUAL ── */
-.layers-vis {
-  display:flex; flex-direction:column; gap:10px;
-  margin-bottom:18px;
-}
-.layer-item {
-  display:flex; align-items:center; gap:12px;
-  background:#080a0f; border:1px solid #1a1f2e;
-  border-radius:10px; padding:12px 16px;
-}
-.layer-num {
-  width:28px; height:28px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:0.75rem; font-weight:800;
-  flex-shrink:0; font-family:'Space Mono',monospace;
-}
-.layer-info h4 { font-size:0.82rem; font-weight:700; margin-bottom:2px; }
-.layer-info p  { font-size:0.7rem; color:#64748b; font-family:'Space Mono',monospace; }
-
 /* ── TABLE ── */
 .tbl-wrap {
   background:#0d1117; border:1px solid #1a1f2e;
@@ -245,7 +218,7 @@ tr:hover td { background:rgba(255,255,255,0.02); }
     <div class="logo">🔐</div>
     <div>
       <h1>SQL Injection Security System</h1>
-      <p>Task 2 — Double-Layer Security · AES-256 Encryption · AWS RDS MySQL</p>
+
     </div>
     <div class="live-badge"><div class="pulse"></div>PROTECTED</div>
   </header>
@@ -271,56 +244,19 @@ tr:hover td { background:rgba(255,255,255,0.02); }
 
   <!-- ══ REGISTER PANEL ══ -->
   <div class="panel active" id="panel-register">
-    <div class="two-col">
-      <div class="card">
-        <div class="card-head">
-          <div>
-            <h3>🛡️ Secure Registration</h3>
-            <p>Double-layer security on every field</p>
-          </div>
-          <div class="sec-tag">AES-256</div>
-        </div>
-        <div class="card-body">
-          <div class="field"><label>Username</label><input id="reg-user" type="text" placeholder="Enter username"/></div>
-          <div class="field"><label>Email</label><input id="reg-email" type="text" placeholder="Enter email (will be encrypted)"/></div>
-          <div class="field"><label>Password</label><input id="reg-pass" type="password" placeholder="Enter password (will be hashed)"/></div>
-          <button class="btn btn-red" onclick="doRegister()">Register Securely</button>
-          <div id="reg-flash" class="flash"></div>
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h3>🛡️ Secure Registration</h3>
+          <p>Double-layer security on every field</p>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-head"><div><h3>🔒 Security Layers</h3><p>How your data is protected</p></div></div>
-        <div class="card-body">
-          <div class="layers-vis">
-            <div class="layer-item">
-              <div class="layer-num" style="background:rgba(255,78,106,0.15);color:#ff4e6a;">2</div>
-              <div class="layer-info">
-                <h4 style="color:#ff4e6a">SQL Injection Shield</h4>
-                <p>Every input scanned against 20+ attack patterns before processing</p>
-              </div>
-            </div>
-            <div class="layer-item">
-              <div class="layer-num" style="background:rgba(0,229,160,0.15);color:#00e5a0;">1</div>
-              <div class="layer-info">
-                <h4 style="color:#00e5a0">AES-256-GCM Encryption</h4>
-                <p>Email encrypted before storing. Password SHA-256 hashed with salt.</p>
-              </div>
-            </div>
-            <div class="layer-item">
-              <div class="layer-num" style="background:rgba(96,165,250,0.15);color:#60a5fa;">✓</div>
-              <div class="layer-info">
-                <h4 style="color:#60a5fa">Parameterized Queries</h4>
-                <p>All DB operations use %s placeholders — never string concatenation</p>
-              </div>
-            </div>
-          </div>
-          <div style="background:#080a0f;border-radius:8px;padding:14px;font-family:'Space Mono',monospace;font-size:0.72rem;color:#64748b;line-height:1.7">
-            🔐 Email stored as: <span style="color:#00e5a0">AES-256-GCM ciphertext</span><br/>
-            🔑 Password stored as: <span style="color:#60a5fa">SHA-256 + salt hash</span><br/>
-            🛡️ Queries use: <span style="color:#ffb830">parameterized %s</span>
-          </div>
-        </div>
+      <div class="card-body">
+        <div class="field"><label>Username</label><input id="reg-user" type="text" placeholder="Enter username"/></div>
+        <div class="field"><label>Email</label><input id="reg-email" type="text" placeholder="Enter email (will be encrypted)"/></div>
+        <div class="field"><label>Password</label><input id="reg-pass" type="password" placeholder="Enter password (will be hashed)"/></div>
+        <button class="btn btn-red" onclick="doRegister()">Register Securely</button>
+        <div id="reg-flash" class="flash"></div>
       </div>
     </div>
   </div>
